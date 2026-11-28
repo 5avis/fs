@@ -3,37 +3,35 @@
 import Students from "./components/Students"
 import {Button} from '@/components/ui/button'
 import Count from "./hooks/Count"
-import Registry from "./hooks/Registry"
-import Navbar from "./components/Navbar"
-import { Routes, Route } from "react-router-dom"
+import Register from "./hooks/Register"
+import Users from "./hooks/Users"
+import { Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Service from "./pages/Service"
 import Contact from "./pages/Contact"
+import Navbar from "./components/Navbar"
+import Products from "./pages/Products"
+import ProductDetails from "./pages/ProductDetails"
 const App = () => {
   let name="test"
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/" Component={Home}/> 
+          <Route path="/about" Component={About}/> 
+          <Route path="/service" Component={Service}/> 
+          <Route path="/contact" Component={Contact}/>
+          <Route path="/products" Component={Products}/>
+          <Route path="/productDetails/:id" Component={ProductDetails}/>
       </Routes>
-      <div className="pl-96 text-cyan-300 bg-blue-700 ">App</div>
-      <Count/>
-      <Button variant="destructive">Delete</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="secondary">secondary</Button>
-      <Button variant="ghost">Ghost</Button>
-      <h1>This is {name}</h1>
 
-      <Students name="user" age={20} />
-      <Registry />
-    </> 
+      {/* <div className="pl-96 text-cyan-300 bg-blue-700 ">App</div> */}
+      
+     
+     
+    </>
   )
 }
 export default App

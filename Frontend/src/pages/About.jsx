@@ -1,7 +1,17 @@
+import Parent from "@/components/Parent"
+import Count from "@/hooks/Count"
+import { StudentContext } from "@/StudentContext"
+
 const About = () => {
+    let StudentName="Student"
   return (
-    <div className="pl-96 text-cyan-300 bg-blue-700 ">About</div>
+    <div>
+      <StudentContext.Provider value={StudentName}>
+        <Parent />
+      </StudentContext.Provider>
+
+      <Count />
+    </div>
   )
 }
-
 export default About
